@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: aliceblue;
+  background: #0D0E2B;
+  /* Basic background 
+  Adding a mesh-like gradient overlay */
+  background-image:
+    radial-gradient(at 10% 10%, rgba(85, 96, 233, 0.2) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(85, 96, 233, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  /* For a fixed background effect */
+}
+
+/* કસ્ટમ ફ્લોટિંગ એનિમેશન */
+@keyframes normalFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* ફક્ત 8px જ ઉપર જશે (ઓછો એરિયા) */
+  }
+}
+
+.animate-normal-float {
+  animation: normalFloat 3s infinite; /* 4 સેકન્ડની ધીમી સ્પીડ */
+}
+
+.animate-normal-float:hover {
+  animation-play-state: paused;
+}
